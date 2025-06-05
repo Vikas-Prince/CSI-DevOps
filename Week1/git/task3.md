@@ -33,7 +33,6 @@ git add newfile.txt
 git commit -m "Added new file in feature1 branch"
 ```
 
-**New branch changes**
 ![New Branch](./snapshots/task3-branch.jpg)
 
 ### Step 4: Push Feature Branch to GitHub
@@ -42,13 +41,11 @@ git commit -m "Added new file in feature1 branch"
 git push -u origin feature1
 ```
 
-**Push Feature to Github**
 ![Push Feature](./snapshots/task3-gitpush.jpg)
 
 ### Step 5: Created Pull Request & Merge
 
-![PR](./snapshots/task2-gitpr.jpg)
-
+![PR](./snapshots/task3-pullrequest.jpg)
 
 ### Step 6: Delete Feature Branch
 
@@ -57,7 +54,6 @@ git branch -d feature1                # Delete Branch Locally
 git push origin --delete feature1     # Delete Branch in GitHub
 ```
 
-**Delete Feature Branch**
 ![Delete Branch](./snapshots/task3-deletebranch.jpg)
 
 ### Step 6: Verify Changes in main branch updated via feature Branch in GitHub
@@ -68,8 +64,6 @@ git push origin --delete feature1     # Delete Branch in GitHub
 
 ## 🧾 Conclusion
 
-In this task, I learned how to create a new branch, make changes, and push them to GitHub. I also practiced creating a pull request to merge changes into the main branch. 
+In this task, I learned how to create a new branch, make changes, and push them to GitHub. I also practiced creating a pull request to merge changes into the main branch.
 
 ---
-
-
