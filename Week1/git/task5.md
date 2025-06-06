@@ -18,14 +18,14 @@ git checkout -b feature-x
 
 ```bash
 vi index.html
-  > This is vikas changes made from conflict branch.
+  > This is vikas changes made from feature branch.
 
 git add index.html
 git commit -m "modified from feature branch"
 git push -u origin feature branch
 ```
 
-![feature-branch](./snapshots/task5-feature1.jpg)
+![feature-branch](./snapshots/task5-feature.jpg)
 ![feature-branch](./snapshots/task5-feature1.jpg)
 
 ### Step 3: Switch to Main Branch
@@ -69,7 +69,7 @@ This is vikas updated from feature branch
 - Once update the conflict file, Added to staging and commit the resolved changes
 
 ```bash
-git add index.txt
+git add index.html
 git commit -m "Conflict resolved"
 ```
 
