@@ -1,4 +1,4 @@
-# Week 1 - Git: Task 4
+# Week 1 - Git: Task 3
 
 ## 📌 Task: Create a New Branch, Push Changes, and Merge via Pull Request
 
