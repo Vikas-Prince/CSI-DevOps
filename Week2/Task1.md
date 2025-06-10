@@ -106,12 +106,11 @@ Once the deployment was complete, I accessed the VM as follows:
 - Opened the .rdp file on my local machine.
 - Entered the login credentials (azureadmin and the password) when prompted.
 
-![Windows-Machine](./snapshots/rdp.jpg)
+![Windows-Machine](./snapshots/windows-machine-ovw.jpg)
 
 - I successfully logged into the Windows Server desktop environment via Remote Desktop.
 
-![Windows-Machine](./snapshots/windows-machine-ovw.jpg)
-
+![Windows-Machine](./snapshots/rdp.jpg)
 
 ---
 
