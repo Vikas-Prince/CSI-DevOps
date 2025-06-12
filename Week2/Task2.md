@@ -16,7 +16,6 @@ To understand and implement the deployment of a web application using Azure App 
 
 ![Service-Plan](./snapshots/task2-service-plan.jpg)
 
-
 ### Step 2: Create a New App Service Plan
 
 - Clicked **Create** to initiate the creation of a new plan.
@@ -26,19 +25,17 @@ To understand and implement the deployment of a web application using Azure App 
 - **Region:** Canada Central / Central India
 - **Pricing Tier:** Basic Plan B1: To integrate Continous deployment
 
-![Service-Plan](./snapshots/task2-service-paln2.jpg)
-
+![Service-Plan](./snapshots/serviceplan.jpg)
 
 ### Step 3: Review and Create
 
 - After filling out the details, I clicked on **Review + Create** and verified all values.
 
-![Service-Plan](./snapshots/task2-service-plan-validation.jpg)
+![Service-Plan](./snapshots/serviceplan-review.jpg)
 
 - Clicked **Create** and waited for successful deployment.
 
-![Service-Plan](./snapshots/task2-deployed-service-plan.jpg)
-
+![Service-Plan](./snapshots/serviceplan-deploy.jpg)
 
 ### Step 4: Navigate to App Services
 
@@ -69,7 +66,6 @@ To understand and implement the deployment of a web application using Azure App 
 
 ![GitHub Deployment](./snapshots/task2-webapp-git.jpg)
 
-
 ### Step 7: Review + Create
 
 - Verified all the configuration details.
@@ -84,7 +80,6 @@ To understand and implement the deployment of a web application using Azure App 
 - Azure automatically set up GitHub Actions for deployment as part of the selected deployment method.
 
 ![App Service Created](./snapshots/task2-webapp-deploy.jpg)
-
 
 ### ✅ Step 9: Azure App Service Started Deploying from GitHub
 
