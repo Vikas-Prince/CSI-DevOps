@@ -44,7 +44,7 @@ To understand Azure Virtual Networking concepts and implement **Hub-and-Spoke to
 
   ![virtual-machines](./snapshots/task5-linux.jpg)
 
-  ![virtual-machines](./snapshots/task5-windows-review.jpg)
+  ![virtual-machines](./snapshots/task5-linux-vm.jpg)
 
   - **Windows VM:** Windows Server 2019 using RDP
 
@@ -196,7 +196,7 @@ I deployed one **RedHat Linux VM** in each VNet:
 
 - Deployed A QA Virtual Machine in `QA-vnet` without public IP
 
-![hub-vm](./snapshots/qa-vm-jpg)
+![hub-vm](./snapshots/qa-vm.jpg)
 
 ---
 
