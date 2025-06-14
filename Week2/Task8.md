@@ -12,7 +12,7 @@ In this task, I implemented a private DNS infrastructure in Azure using a Linux 
 
 ### Step 1: Provisioned a Linux VM (Ubuntu)
 
-I provisioned a Linux-based VM using Azure CLI. This machine was used to install and run both the Apache web server and BIND9 DNS server.
+I provisioned a Linux-based VM using. This machine was used to install and run both the Apache web server and BIND9 DNS server.
 
 ![Virtual Machine](./snapshots/dns-vm.jpg)
 
