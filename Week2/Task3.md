@@ -8,15 +8,15 @@ The goal of this task was to understand how to use **Azure Container Registry (A
 
 ---
 
-## 🧩 Step-by-Step Implementation
+## Step-by-Step Implementation
 
-### ✅ Step 1: Access Azure Container Registries
+### Step 1: Access Azure Container Registries
 
 - From the Azure Portal, I searched for **Container Registries** and opened the service.
 
 ![container-registry](./snapshots/task3-registry-portal.jpg)
 
-### ✅ Step 2: Create a New Azure Container Registry (ACR)
+### Step 2: Create a New Azure Container Registry (ACR)
 
 - Clicked on **Create**.
 - Filled in the following configuration:
@@ -31,7 +31,7 @@ The goal of this task was to understand how to use **Azure Container Registry (A
 
 ![container-registry](./snapshots/task3-registry-review.jpg)
 
-### ✅ Step 3: Log in to Azure & ACR
+### Step 3: Log in to Azure & ACR
 
 - Logged in to Azure using the CLI:
 
@@ -61,9 +61,19 @@ podman push csitask3acr.azurecr.io/csitask3image:v1
 
 ![acr-image](./snapshots/task3-acr-image.jpg)
 
-## Deploy Container from ACR Using Azure Container Instances
+## Deploy Container from ACR in Linux VM & Azure Container Instances 
 
-### Step 6: Create a Container Instance
+### Step 7: Deployed a Container on the VM
+
+- I deployed a container inside the virtual machine using an image from Azure Container Registry (ACR):
+
+```bash
+podman run --name csi-task-container -d -p 3000:3000 csitask3acr.azurecr.io/csitask3image:v1
+```
+
+![container](./snapshots/task3-container.jpg)
+
+### Step 8: Create a Container Instance
 - Navigated to Container Instances in the portal and initiated a new deployment:
 
   - **Container Name:** csitask3-container
@@ -73,17 +83,17 @@ podman push csitask3acr.azurecr.io/csitask3image:v1
 
 ![container-instance](./snapshots/task3-csi-portal-container.jpg)
 
-### Step 7: Review & Deploy
+### Step 9: Review & Deploy
 - Reviewed the configuration and clicked Create.
 
 ![container-review](./snapshots/task3-container-review.jpg)
 
-### Step 8: Container Deployed Successfully
+### Step 10: Container Deployed Successfully
 - Once the deployment was complete, I navigated to the instance to confirm the status.
 
 ![container-deployed](./snapshots/task3-csi-container.jpg)
 
-### Step 9: Verify Web Application
+### Step 11: Verify Web Application
 - Finally, I copied the container’s public IP address, opened it in a browser, and confirmed that my Node.js app (serving a static HTML page) was running successfully.
 
 ![web-view](./snapshots/task3-container-view.jpg)
