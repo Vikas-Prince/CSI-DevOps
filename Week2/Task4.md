@@ -104,9 +104,9 @@ This successful test validated that the application was deployed and accessible 
 
 ## Container Group
 
-### Step 7: Deployed58 a Multi-Container Group
+### Step 7: Deployed a Multi-Container Group
 
-Since Azure Portal doesn't currently support GUI-based multi-container group creation, I used an **ARM template** inside the **Azure Cloud Shell** to deploy a container group with two containers.
+Since Azure Portal doesn't currently support GUI-based multi-container group creation, I used **Azure Cloud Shell** to deploy a container group with two containers.
 
 A container group in Azure works like a Kubernetes Pod — all containers in a group share the same network, storage, and lifecycle.
 
