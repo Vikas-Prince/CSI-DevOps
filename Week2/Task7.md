@@ -12,7 +12,7 @@ The goal of this task is to understand and implement **Azure Application Gateway
 
 ## 🔧 Step-by-Step Guide
 
-### ✅ Step 1: Used Existing Resources
+### Step 1: Used Existing Resources
 
 I reused the following resources created during the Load Balancer task:
 
@@ -22,9 +22,9 @@ I reused the following resources created during the Load Balancer task:
 - **Web Servers (VMs)**: 2 Linux VMs already deployed in `private-subnet` with Apache Web Server installed
 - **Public IP**: Used the same static public IP created earlier for external access
 
-> 🔐 **Note**: Application Gateway requires a dedicated subnet — it cannot share a subnet with backend VMs or other resources.
+> **Note**: Application Gateway requires a dedicated subnet — it cannot share a subnet with backend VMs or other resources. So i created dedicated subnet only for application gateway
 
-### ✅ Step 2: Web Server Configuration (Pre-existing Setup)
+### Step 2: Web Server Configuration (Pre-existing Setup)
 
 On both Linux VMs (in `private-subnet`), Apache was already installed with unique welcome messages on their `index.html` to help confirm load balancing:
 
@@ -97,10 +97,10 @@ Navigated to **Application Gateways** in Azure Portal and clicked **Create**:
 - Pasted in browser → Successfully saw the custom page
 - Refreshed several times → Confirmed **load balancing** by seeing different VM messages
 
-![app-gtw-test](https://drive.google.com/file/d/1PYxqpVhif9LNPTK9FW3TBC0ZO7wrR5im/view?usp=sharing)
+[Watch Application Gateway Testing](https://drive.google.com/file/d/1PYxqpVhif9LNPTK9FW3TBC0ZO7wrR5im/view?usp=sharing)
 
 <video width="640" height="360" controls>
-  <source src="./snapshots/app-gtw.mp4" type="video/mp4">
+  <source src="https://drive.google.com/file/d/1PYxqpVhif9LNPTK9FW3TBC0ZO7wrR5im/view?usp=sharing" type="video/mp4">
 </video>
 
 > Application Gateway and Load Balancers can work together to handle traffic better by combining basic load distribution with smarter routing and security features.
