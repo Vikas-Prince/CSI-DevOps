@@ -40,7 +40,7 @@ The goal of this task was to get hands-on experience with deploying containerize
 - Under the **Networking** tab:
 
   - Enabled **public access** to the container
-  - Exposed **port 80** (default HTTP port)
+  - Exposed **port 3000** on which react application will run
   - Set a custom **DNS name label** like `task4-csi-react-app`, which forms a public URL:
     `   http://task4-nginx-demo.centralindia.azurecontainer.io`
     ![aci-container-network](./snapshots/task4-container-networking.jpg)
@@ -77,6 +77,10 @@ Azure also provides visibility into what's happening inside the container:
 
 ![container-logs](./snapshots/task4-container-logs.jpg)
 
+- **Container usage**: Displays visual metrics such as CPU, memory, and network usage over time. These performance graphs help monitor resource consumption and ensure the container remains within its allocated limits.
+
+![container-usage](./snapshots/task4-container-usage.jpg)
+
 ### Step 6: Verify Deployment
 
 To confirm everything was working as expected, I tested access through:
@@ -98,7 +102,9 @@ This successful test validated that the application was deployed and accessible 
 
 ---
 
-### Step 7: Deploy a Multi-Container Group
+## Container Group
+
+### Step 7: Deployed58 a Multi-Container Group
 
 Since Azure Portal doesn't currently support GUI-based multi-container group creation, I used an **ARM template** inside the **Azure Cloud Shell** to deploy a container group with two containers.
 
