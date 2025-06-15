@@ -12,6 +12,7 @@ Each week is structured with:
 ## 📌 Weeks Covered
 
 - **Week 1** – Linux & Git fundamentals
+- **Week 2** – Azure Compute & Storage (VMs, ACR, ACI, Load Balancer, Application Gateway, Storage Accounts, File Sync, Disks & Snapshots)
 - *(More weeks will be added as the internship progresses)*
 
 
