@@ -10,7 +10,7 @@ In this task, I explored Azure Storage Account features such as blobs, file shar
 
 I Navigated to the Azure portal and started the process of creating a new Storage Account. I named it `csidevopsstorage` and selected `East-US` as the region to keep it local.
 
-![storage-account-portal](./snapshots/task9-storage-portal.jpg)
+![storage-account-portal](./snapshots/task9-storage-basic.jpg)
 
 - I chosen the Standard performance tier for cost efficiency.
 
