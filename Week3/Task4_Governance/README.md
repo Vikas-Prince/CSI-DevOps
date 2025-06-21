@@ -70,7 +70,7 @@ Finally I hit `Save`
 
 ![assignment](./snapshots/assignment-created.jpg)
 
-### Step 4: Verifying That the Tag Policy Works (Tested with VNet)
+## Step 4: Verifying That the Tag Policy Works (Tested with VNet)
 
 After assigning the policy, I wanted to make sure it was actually enforcing the rule — that is, **blocking any resource that doesn’t have the `csi-devops` tag set to `required`**.
 
