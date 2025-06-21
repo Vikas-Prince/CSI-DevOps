@@ -36,13 +36,23 @@ The main goal of this task was to learn how to securely manage secrets using **A
   - **Soft delete:** Enabled by default (helps with accidental deletions)
   - **Retention policy:** I set the retention period for deleted secrets to **90 days**, which means even if a secret is deleted, it can be recovered within that time.
 
+![vault](./snapshots/keyvault-ui-basics.jpg)
+
+- Under **Access configuration**, I selected:
+
+  - **Permission model:** Azure role-based access control (RBAC)
+
+- I also enabled the options to allow:
+  - **Access from virtual machines (VMs)** — so VMs can securely retrieve secrets
+  - **Access by ARM templates** — useful for deployments that need secrets during provisioning
+
 ![key-vault](./snapshots/access-control.jpg)
 
 - Clicked **“Review + Create”** → **“Create”**.
 
 ![key-vault](./snapshots/vault%20review.jpg)
 
-> 🔐 The person who creates the vault automatically gets full permissions on it.
+- The person who creates the vault automatically gets full access. By enabling VM and ARM access, I made sure my infrastructure can securely interact with the vault without hardcoded secrets
 
 ![Vault](./snapshots/vault-created.jpg)
 
