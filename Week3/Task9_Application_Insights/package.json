@@ -1,0 +1,16 @@
+{
+  "name": "csi-devops",
+  "version": "1.0.0",
+  "description": "Welcome to my **DevOps Internship Assignment Repository**! 👨‍💻  \r This repo contains all weekly tasks, categorized into folders like `week1`, `week2`, etc., covering hands-on Linux commands, Git operations, and more DevOps automation tools.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "applicationinsights": "^3.7.0",
+    "express": "^5.1.0"
+  }
+}
