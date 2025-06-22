@@ -38,17 +38,9 @@ Logged into the **AWS Console** using my root/administrator credentials.
 
 - Go to: [https://console.aws.amazon.com/](https://console.aws.amazon.com/)
 
-![aws-login](./snapshots/aws-login.jpg)
+![aws-login](./snapshots/management_console.jpg)
 
-### Step 2: Observed My Account & Active Subscription
-
-Navigated to the **"My Account"** section from the AWS Console to view current account information, billing, and subscription plan.
-
-- Confirmed the account is **active and valid**.
-
-![account-info](./snapshots/account-info.jpg)
-
-### Step 3: Navigated to IAM (Identity and Access Management)
+### Step 2: Navigated to IAM (Identity and Access Management)
 
 Went to the **IAM Dashboard**:
 
@@ -58,7 +50,7 @@ Went to the **IAM Dashboard**:
 
 ![IAM-Portal](./snapshots/iam-portal.jpg)
 
-### Step 4: Created a New IAM Group
+### Step 3: Created a New IAM Group
 
 Created a group called `CSI-DevOps`.
 
@@ -69,7 +61,7 @@ Created a group called `CSI-DevOps`.
 
 ![group-created](./snapshots/created-group.jpg)
 
-### Step 5: Created Two Test IAM Users
+### Step 4: Created Two Test IAM Users
 
 Created two users: `testuser1` and `testuser2`
 
@@ -84,7 +76,7 @@ Created two users: `testuser1` and `testuser2`
 
 ![user-created](./snapshots/users.jpg)
 
-### Step 6: Tested Role-Based Access by Logging in as `CSI-User-Vikas`
+### Step 5: Tested Role-Based Access by Logging in as `CSI-User-Vikas`
 
 Used the provided URL to login as `CSI-User-Vikas`.
 
@@ -94,12 +86,12 @@ Used the provided URL to login as `CSI-User-Vikas`.
 
 ![view-ec2-instances](./snapshots/vm-read.jpg)
 
-> RBAC Working as expected using AWS IAM Group Policies.
+- RBAC Working as expected using AWS IAM Group Policies.
 
 ![test-user-login](./snapshots/verified-access.jpg)
 
 
-### Step 7: Created a Custom IAM Policy for EC2 Instances
+### Step 6: Created a Custom IAM Policy for EC2 Instances
 
 Created a custom IAM policy named `CustomEC2ManagePolicy` to allow users limited EC2 instance management capabilities such as **starting**, **stopping**, and **describing** instances—without full admin privileges.
 
@@ -157,7 +149,7 @@ This helps ensure:
 ![custom-policy](./snapshots/policy.jpg)
 
 
-### Step 8: Attached Custom Policy to `csi-user-lalam`
+### Step 7: Attached Custom Policy to `csi-user-lalam`
 
 After creating the `CustomEC2ManagePolicy`, I attached it directly to the IAM user `csi-user-lalam`.
 
@@ -173,7 +165,7 @@ After creating the `CustomEC2ManagePolicy`, I attached it directly to the IAM us
 ![attach-policy-user](./snapshots/csi-user-lalam-polcy.jpg)
 
 
-### Step 9: Verified Permissions for `csi-user-lalam`
+### Step 8: Verified Permissions for `csi-user-lalam`
 
 Logged in to the AWS Console as `csi-user-lalam` using the provided IAM login URL.
 
@@ -189,7 +181,7 @@ Logged in to the AWS Console as `csi-user-lalam` using the provided IAM login UR
 | Terminate Instance | Denied  | Button was greyed out                       |
 | Launch Instance    | Denied  | Blocked on instance creation                |
 
-> Permissions applied exactly as expected. IAM role enforcement was successful.
+- Permissions applied exactly as expected. IAM role enforcement was successful.
 
 ![ec2-testuser1-access](./snapshots/verified-access-lalam.jpg)
 
