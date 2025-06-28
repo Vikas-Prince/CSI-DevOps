@@ -1,0 +1,16 @@
+{
+  "name": "task6_networking",
+  "version": "1.0.0",
+  "description": "This task wasn’t just about creating a basic Docker bridge network, which is what most tutorials stop at. I wanted to simulate a **real-world, production-like microservice setup** where multiple containers talk to each other over a secure custom bridge network. The goal was to:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
