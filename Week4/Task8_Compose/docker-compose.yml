@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: vikasprince/csi-frontend:v1
+    container_name: csi-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - csi_net
+
+  backend:
+    image: csiecr.azurecr.io/csi-backend:v1
+    container_name: csi-backend
+    environment:
+      - DB_HOST=mongodb
+      - DB_NAME=csidb
+    depends_on:
+      - mongodb
+    networks:
+      - csi_net
+
+  mongodb:
+    image: mongo:6
+    container_name: csi-mongo
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS}
+    networks:
+      - csi_net
+
+volumes:
+  mongo_data:
+
+networks:
+  csi_net:
+    driver: bridge
