@@ -14,7 +14,10 @@ Each week is structured with:
 - **Week 1** – Linux & Git fundamentals
 - **Week 2** – Azure Compute & Storage (VMs, ACR, ACI, Load Balancer, Application Gateway, Storage Accounts, File Sync, Disks & Snapshots)
 - **Week 3** – Azure Backup & Monitoring (Azure Backup, Site Recovery, Monitoring, Application Insights, Log Analytics Workspace)
+- **Week 4** – Docker & Containerization ( multi-stage builds, pushing to Docker Hub & ACR, persistent volumes, custom bridge networks, Docker Compose).
+
 - *(More weeks will be added as the internship progresses)*
+
 
 
 ## 🧠 Goal

@@ -207,7 +207,7 @@ To ensure the security of the application, I implemented the following best prac
 
 #### Network Isolation
 
-I created a **custom network** (`csi_prod_net`) for all the services to communicate over. This ensures that only the necessary services can interact with each other and that they are not exposed to the external network unless explicitly required. By isolating the services in this manner, I reduced the risk of accidental exposure or unauthorized access to internal services.
+I created a **custom network** (`csi_net`) for all the services to communicate over. This ensures that only the necessary services can interact with each other and that they are not exposed to the external network unless explicitly required. By isolating the services in this manner, I reduced the risk of accidental exposure or unauthorized access to internal services.
 
 #### Environment Variables
 
