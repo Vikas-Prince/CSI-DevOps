@@ -12,7 +12,7 @@ The goal was to implement a robust, automated CI/CD pipeline using Jenkins multi
 
 ---
 
-## 🔍 Initial Setup & Architecture
+## Initial Setup & Architecture
 
 * **AKS cluster:** Already provisioned and configured.
 * **Jenkins:** Running inside a Docker container on a dedicated VM.
@@ -22,11 +22,11 @@ The goal was to implement a robust, automated CI/CD pipeline using Jenkins multi
 
 ---
 
-## 🧙️‍⚖️ Step-by-Step Implementation
+## Step-by-Step Implementation
 
 ---
 
-###  Step 1: Azure VM Setup for Jenkins
+### Step 1: Azure VM Setup for Jenkins
 Before installing Jenkins, I provisioned a dedicated Linux VM on Azure to act as the Jenkins master and agent node.
 
 ![jenkins-vm](./snapshots/jenkins-vm.jpg)
