@@ -192,7 +192,7 @@ Now, when workload demands increase (e.g., more pods scheduled than current node
 
 ---
 
-## 🔄 Step 6: Upgrading the AKS Cluster
+## Step 6: Upgrading the AKS Cluster
 
 Upgrading Kubernetes is essential for getting the latest features and patching security vulnerabilities.
 
@@ -232,19 +232,20 @@ az aks show \
 
 >  In production, we typically test the upgrade in staging first and review API deprecations, workload compatibility, and third-party integrations before proceeding.
 
+---
+
 ## Real Production Upgrades Are a Different Story
 
 While this task involved a basic AKS upgrade for testing purposes, **upgrading Kubernetes clusters in production environments** is a much more sensitive and critical activity.
 
 With **2.5+ years of industry experience at Infosys**, I've been part of several production-grade Kubernetes upgrades (EKS), and I can confidently say — **it requires careful planning, testing, and execution to avoid downtime or disruption**.
 
----
 
 ## Pre-Upgrade Planning & Prerequisites
 
 Before any upgrade, we ensure a set of checks and validations are completed:
 
-#### Read Release Notes Carefully
+### 1. Read Release Notes Carefully
 
 We always begin by reading the **official Kubernetes and cloud provider release notes** to understand:
 
@@ -255,7 +256,7 @@ We always begin by reading the **official Kubernetes and cloud provider release 
 
 This helps us plan any required changes to manifests, Helm charts, or custom workloads.
 
-#### Test in Lower Environments First
+### 2. Test in Lower Environments First
 
 We never upgrade production clusters directly.
 
@@ -265,7 +266,7 @@ We **mirror the upgrade in dev/staging environments** and let it run for 1–2 w
 - Test third-party integrations (e.g., logging/monitoring)
 - Observe autoscaler behavior
 
-#### Cordon the Nodes
+### 3. Cordon the Nodes
 
 To safely upgrade node pools, we prevent new workloads from being scheduled onto nodes:
 
@@ -274,15 +275,15 @@ kubectl cordon <node-name>
 ```
 This ensures only existing pods are gracefully drained or evicted during rollout.
 
-#### Control Plane and Data Plane Compatibility
+### 4. Control Plane and Data Plane Compatibility
 
-We always ensure that:
+I always ensure that:
 
 - **Worker nodes (data plane)** are compatible with the upgraded control plane version.
 - **AKS supports n-1 minor version skew**, meaning worker nodes can lag behind the control plane by one minor version — but long-term version drift can lead to instability, unsupported behavior, or upgrade failures.
 
 
-#### Understand One-Way Upgrades
+### Understand One-Way Upgrades
 
 A **Kubernetes upgrade is a one-way operation** — once you upgrade to a new version, **you cannot downgrade**.
 
@@ -291,7 +292,7 @@ If rollback is absolutely required, the only option is to create a **fresh clust
 > Because of this, we always allow a **grace period of 1–2 weeks** in non-production environments after a successful upgrade before we promote it to production.
 
 
-#### Cluster Autoscaler & Kubelet Compatibility
+### 5. Cluster Autoscaler & Kubelet Compatibility
 
 After the control plane is upgraded, we make sure:
 
@@ -305,9 +306,9 @@ These components must be version-aligned to ensure:
 - **Compatibility with cloud provider integrations**
 
 
-### Upgrade Process – 3 Main Phases
+### Upgrade Proces - Main Phases
 
-#### Control Plane Upgrade (Managed by Azure)
+### 1. Control Plane Upgrade (Managed by Azure)
 Since AKS is a managed service, Azure handles the control plane upgrade.
 
 Azure ensures:
@@ -316,19 +317,19 @@ Azure ensures:
 - Safe upgrade without impacting workloads
 
 
-#### Node Pool (Data Plane) Upgrade – Our Responsibility
+### 2. Node Pool (Data Plane) Upgrade – Our Responsibility
 
 Upgrading the **worker nodes (data plane)** is not handled automatically by Azure — it's our responsibility.
 
 Depending on the environment and criticality, we choose between two approaches:
 
-##### In-Place Rolling Upgrade
+#### In-Place Rolling Upgrade
 
 - Azure upgrades the node pool **one node at a time**.
 - During this, **pods are drained** and automatically **rescheduled to other available nodes**.
 - Minimal manual intervention, but some risk if workloads aren’t designed for disruption.
 
-##### Blue-Green Upgrade (Preferred for Production)
+#### Blue-Green Upgrade (Preferred for Production)
 
 This approach offers more control and rollback capability:
 
@@ -339,8 +340,6 @@ This approach offers more control and rollback capability:
 - Once validated, **decommission the old node pool** safely.
 
 > This reduces the blast radius of potential issues and provides a safer rollback option if needed.
-
----
 
 During either upgrade strategy, we always **drain nodes gracefully** to avoid abrupt pod terminations:
 
