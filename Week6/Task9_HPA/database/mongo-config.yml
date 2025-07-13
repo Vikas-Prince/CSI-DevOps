@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: mernstack
+  name: mongo-config
+data:
+  mongo-service-name: mongodb-service
