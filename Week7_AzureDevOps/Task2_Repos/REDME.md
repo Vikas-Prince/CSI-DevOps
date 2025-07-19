@@ -1,13 +1,12 @@
 # week 7 -  Azure Repos
 
-## Task: Restricting Access to `master` Branch – Azure DevOps Branch Policies
+## Task: Restricting Access to `main` Branch – Azure DevOps Branch Policies
 
+## Objective:
 
-## Objective":
+While working on the Azure DevOps project setup, I came across the need to **strictly control who can push changes to the `main` branch**. In most real-time development environments, we never allow direct access to production or protected branches unless absolutely necessary — this ensures both **code quality** and **production safety**.
 
-While working on the Azure DevOps project setup, I came across the need to **strictly control who can push changes to the `master` branch**. In most real-time development environments, we never allow direct access to production or protected branches unless absolutely necessary — this ensures both **code quality** and **production safety**.
-
-So, I decided to apply a **branch security policy** where **only Project Administrators (like me)** can push to `master`, and all other users including Contributors or Developers **must go through Pull Requests (PRs)**.
+So, I decided to apply a **branch security policy** where **only Project Administrators (like me)** can push to `main`, and all other users including Contributors or Developers **must go through Pull Requests (PRs)**.
 
 ---
 
@@ -26,7 +25,7 @@ First, I initialized a new repository in Azure DevOps.
 
 ---
 
-### 👥 Modified Permissions
+### Modified Permissions
 
 #### For `Contributors` Group:
 - **Contribute**: Denied
@@ -51,7 +50,7 @@ First, I initialized a new repository in Azure DevOps.
 
 ## Conclusion
 
-By implementing these branch security settings, I've ensured that only authorized users (like Project Administrators) can push directly to the master branch, while others must go through a proper Pull Request process. This helps maintain high-quality code and prevents accidental changes to protected branches.
+By implementing these branch security settings, I've ensured that only authorized users (like Project Administrators) can push directly to the main branch, while others must go through a proper Pull Request process. This helps maintain high-quality code and prevents accidental changes to protected branches.
 
 ---
 
