@@ -18,6 +18,7 @@ Each week is structured with:
 - **Week 5** – Kubernetes (Minikube & kubeadm installation, AKS cluster setup, microservices deployment, and 
 service management)
 - **Week 6** – Kubernetes (ReplicaSets, Services, PV/PVC, AKS management, probes, taints, autoscaling and Cluster Management)
+- **Week 7** – Azure DevOps (Azure Repos – Branch policies, security settings, and branch locks; Azure Pipelines – branch filters, path filters, and quality gates, linking work items) 
 
 - *(More weeks will be added as the internship progresses)*
 
