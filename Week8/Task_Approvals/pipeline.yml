@@ -1,0 +1,77 @@
+trigger:
+  branches:
+    include:
+      - main
+
+variables:
+  imageName: 'java-app'
+  tag: 'latest'
+  dockerRegistry: 'acrglobalcsi.azurecr.io'
+  registry: 'acrglobalcsi'
+
+pool: 
+  name: csi-agent-pool
+
+stages:
+
+- stage: BuildDockerImage
+  displayName: 'Build and Push Docker Image to ACR'
+  jobs:
+  - job: BuildDocker
+    steps:
+    - template: pipeline-template.yml
+      parameters:
+        imageName: $(imageName)
+        tag: $(tag)
+        registry: $(registry)
+
+- stage: Dev
+  displayName: 'Deploy to Dev'
+  dependsOn: BuildDockerImage
+  condition: succeeded()
+  jobs:
+    - deployment: DevDeployment
+      displayName: 'Run Container in Dev'
+      environment: 'dev-env'  
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - script: |
+                  docker rm -f dev-container || true
+                  docker run -d --name dev-container -p 8080:8080 $(dockerRegistry)/$(imageName):$(tag)
+                displayName: 'Run Container'
+
+- stage: Staging
+  displayName: 'Deploy to Staging'
+  dependsOn: Dev
+  condition: succeeded()
+  jobs:
+    - deployment: StagingDeployment
+      displayName: 'Run Container in Staging'
+      environment: 'staging-env'  
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - script: |
+                  docker rm -f staging-container || true
+                  docker run -d --name staging-container -p 8081:8080 $(dockerRegistry)/$(imageName):$(tag)
+                displayName: 'Run Container'
+
+- stage: Prod
+  displayName: 'Deploy to Production'
+  dependsOn: Staging
+  condition: succeeded()
+  jobs:
+    - deployment: ProdDeployment
+      displayName: 'Run Container in Prod'
+      environment: 'prod-env'  
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - script: |
+                  docker rm -f prod-container || true
+                  docker run -d --name prod-container -p 8082:8080 $(dockerRegistry)/$(imageName):$(tag)
+                displayName: 'Run Container'
