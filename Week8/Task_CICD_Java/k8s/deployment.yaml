@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csi-java-web-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: csi-java-web
+  template:
+    metadata:
+      labels:
+        app: csi-java-web
+    spec:
+      containers:
+      - name: csi-java-web
+        image: acrglobalcsi.azurecr.io/csi-java-web:$(Build.BuildId)
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: csi-java-web-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: csi-java-web
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
