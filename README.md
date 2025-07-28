@@ -18,10 +18,12 @@ Each week is structured with:
 - **Week 5** – Kubernetes (Minikube & kubeadm installation, AKS cluster setup, microservices deployment, and 
 service management)
 - **Week 6** – Kubernetes (ReplicaSets, Services, PV/PVC, AKS management, probes, taints, autoscaling and Cluster Management)
-- **Week 7** – Azure DevOps (Azure Repos – Branch policies, security settings, and branch locks; Azure Pipelines – branch filters, path filters, and quality gates, linking work items) 
+- **Week 7** – Azure DevOps (Azure Repos – Branch policies, security settings, and branch locks; Azure Pipelines – branch filters, path filters, and quality gates, linking work items)
 
-- *(More weeks will be added as the internship progresses)*
+- **Week 8** – Azure DevOps & Final Activities (self-hosted agents, scoped variables, pipelines, and multiple real-time deployments)
 
+
+✅ Successfully completed all weeks from **Week 1** to **Week 8**, demonstrating a consistent learning curve and **hands-on expertise** in **Azure Cloud**, **Docker**, **Kubernetes**, **Azure DevOps**, and **real-world deployments**.
 
 
 ## 🧠 Goal
